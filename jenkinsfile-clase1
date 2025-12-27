@@ -23,16 +23,6 @@ pipeline{
                 sh "echo 'holamundo' "
             }
         }
-         stage ("imprimir variable de system"){
-         steps{
-                echo "${env.INSTAGRAM}"
-                echo "${INSTAGRAM}"
-                echo "$INSTAGRAM"
-                
-                sh "echo ${env.INSTAGRAM}"
-                sh "echo ${INSTAGRAM}"
-                sh "echo $INSTAGRAM"
-            }
              
          }
     }
