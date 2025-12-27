@@ -1,0 +1,39 @@
+pipeline{
+    agent any
+    environment{
+        INSTAGRAM_MK="@mickyremix"
+    }
+    stages{
+        stage("saludo1"){
+            steps{
+                echo "hola desde saludo 1"
+            }
+        }
+        stage("saludo 2"){
+            steps {
+                echo "saludo1"
+                echo "saludo2"
+            }
+        }
+        stage ("imprimir variable de entorno"){
+            steps{
+                echo "${env.INSTAGRAM_MK}"
+                echo "${INSTAGRAM_MK}"
+                echo "$INSTAGRAM_MK"
+                sh "echo 'holamundo' "
+            }
+        }
+         stage ("imprimir variable de system"){
+         steps{
+                echo "${env.INSTAGRAM}"
+                echo "${INSTAGRAM}"
+                echo "$INSTAGRAM"
+                
+                sh "echo ${env.INSTAGRAM}"
+                sh "echo ${INSTAGRAM}"
+                sh "echo $INSTAGRAM"
+            }
+             
+         }
+    }
+}
